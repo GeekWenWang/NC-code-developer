@@ -139,7 +139,15 @@ void lengthCaculator(CNC_CODE_DATA *cncCodeDataPtr)
 	}
 	else if(cncCodeDataPtr->xyCoordinate[1][0] >=0 && cncCodeDataPtr->xyCoordinate[1][1] >= 0)
 	{
-		cncCodeDataPtr->absAngle[0] = atan(cncCodeDataPtr->xyCoordinate[1][1]/cncCodeDataPtr->xyCoordinate[1][0])/3.14*180;
+		if(cncCodeDataPtr->xyCoordinate[1][0] ==0 && cncCodeDataPtr->xyCoordinate[1][1] == 0)
+		{
+			cncCodeDataPtr->xyCoordinate[1][0] = 0.01;
+			cncCodeDataPtr->absAngle[0] = atan(cncCodeDataPtr->xyCoordinate[1][1]/cncCodeDataPtr->xyCoordinate[1][0])/3.14*180;
+		}
+		else
+		{
+			cncCodeDataPtr->absAngle[0] = atan(cncCodeDataPtr->xyCoordinate[1][1]/cncCodeDataPtr->xyCoordinate[1][0])/3.14*180;
+		}
 	}
 	else
 	{
@@ -156,7 +164,15 @@ void lengthCaculator(CNC_CODE_DATA *cncCodeDataPtr)
 	}
 	else if(cncCodeDataPtr->xyCoordinate[2][0] >=0 && cncCodeDataPtr->xyCoordinate[2][1] >= 0)
 	{
-		cncCodeDataPtr->absAngle[1] = atan(cncCodeDataPtr->xyCoordinate[2][1]/cncCodeDataPtr->xyCoordinate[2][0])/3.14*180;
+		if(cncCodeDataPtr->xyCoordinate[2][0] ==0 && cncCodeDataPtr->xyCoordinate[2][1] == 0)
+		{
+			cncCodeDataPtr->xyCoordinate[2][0] = 0.01;
+			cncCodeDataPtr->absAngle[1] = atan(cncCodeDataPtr->xyCoordinate[2][1]/cncCodeDataPtr->xyCoordinate[2][0])/3.14*180;
+		}
+		else
+		{
+			cncCodeDataPtr->absAngle[1] = atan(cncCodeDataPtr->xyCoordinate[2][1]/cncCodeDataPtr->xyCoordinate[2][0])/3.14*180;
+		}
 	}
 	else
 	{
@@ -173,7 +189,15 @@ void lengthCaculator(CNC_CODE_DATA *cncCodeDataPtr)
 	}
 	else if(cncCodeDataPtr->xyCoordinate[3][0] >=0 && cncCodeDataPtr->xyCoordinate[3][1] >= 0)
 	{
-		cncCodeDataPtr->absAngle[2] = atan(cncCodeDataPtr->xyCoordinate[3][1]/cncCodeDataPtr->xyCoordinate[3][0])/3.14*180;
+		if(cncCodeDataPtr->xyCoordinate[3][0] ==0 && cncCodeDataPtr->xyCoordinate[3][1] == 0)
+		{
+			cncCodeDataPtr->xyCoordinate[3][0] = 0.01;
+			cncCodeDataPtr->absAngle[2] = atan(cncCodeDataPtr->xyCoordinate[3][1]/cncCodeDataPtr->xyCoordinate[3][0])/3.14*180;
+		}
+		else
+		{
+			cncCodeDataPtr->absAngle[2] = atan(cncCodeDataPtr->xyCoordinate[3][1]/cncCodeDataPtr->xyCoordinate[3][0])/3.14*180;
+		}
 	}
 	else
 	{
@@ -184,13 +208,21 @@ void lengthCaculator(CNC_CODE_DATA *cncCodeDataPtr)
 	{
 		cncCodeDataPtr->absAngle[3] = acos(cncCodeDataPtr->xyCoordinate[4][0]/cncCodeDataPtr->lengthOriginToPoint[3])/3.14*180;
 	}
-	else if(cncCodeDataPtr->xyCoordinate[1][1] < 0 && cncCodeDataPtr->xyCoordinate[1][0]>0)
+	else if(cncCodeDataPtr->xyCoordinate[4][1] < 0 && cncCodeDataPtr->xyCoordinate[4][0]>0)
 	{
 		cncCodeDataPtr->absAngle[3] = 360+asin(cncCodeDataPtr->xyCoordinate[4][1]/cncCodeDataPtr->lengthOriginToPoint[3])/3.14*180;
 	}
-	else if(cncCodeDataPtr->xyCoordinate[1][0] >=0 && cncCodeDataPtr->xyCoordinate[1][1] >= 0)
+	else if(cncCodeDataPtr->xyCoordinate[4][0] >=0 && cncCodeDataPtr->xyCoordinate[4][1] >= 0)
 	{
-		cncCodeDataPtr->absAngle[3] = atan(cncCodeDataPtr->xyCoordinate[4][1]/cncCodeDataPtr->xyCoordinate[4][0])/3.14*180;
+		if(cncCodeDataPtr->xyCoordinate[4][0] ==0 && cncCodeDataPtr->xyCoordinate[4][1] == 0)
+		{
+			cncCodeDataPtr->xyCoordinate[4][0] = 0.01;
+			cncCodeDataPtr->absAngle[3] = atan(cncCodeDataPtr->xyCoordinate[4][1]/cncCodeDataPtr->xyCoordinate[4][0])/3.14*180;
+		}
+		else
+		{
+			cncCodeDataPtr->absAngle[3] = atan(cncCodeDataPtr->xyCoordinate[4][1]/cncCodeDataPtr->xyCoordinate[4][0])/3.14*180;
+		}
 	}
 	else
 	{
@@ -207,7 +239,15 @@ void lengthCaculator(CNC_CODE_DATA *cncCodeDataPtr)
 	}
 	else if(cncCodeDataPtr->xyCoordinate[5][0] >=0 && cncCodeDataPtr->xyCoordinate[5][1] >= 0)
 	{
-		cncCodeDataPtr->absAngle[4] = atan(cncCodeDataPtr->xyCoordinate[5][1]/cncCodeDataPtr->xyCoordinate[5][0])/3.14*180;
+		if(cncCodeDataPtr->xyCoordinate[5][0] ==0 && cncCodeDataPtr->xyCoordinate[5][1] == 0)
+		{
+			cncCodeDataPtr->xyCoordinate[5][0] = 0.01;
+			cncCodeDataPtr->absAngle[4] = atan(cncCodeDataPtr->xyCoordinate[5][1]/cncCodeDataPtr->xyCoordinate[5][0])/3.14*180;
+		}
+		else
+		{
+			cncCodeDataPtr->absAngle[4] = atan(cncCodeDataPtr->xyCoordinate[5][1]/cncCodeDataPtr->xyCoordinate[5][0])/3.14*180;
+		}
 	}
 	else
 	{
